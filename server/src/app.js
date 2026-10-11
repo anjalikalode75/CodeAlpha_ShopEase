@@ -79,7 +79,8 @@ app.get('/', (req, res) => {
   });
 });
 
-// Mount API v1 core routes
+// Mount health check routes (/api/health and /api/v1/health)
+app.use('/api', healthRoutes);
 app.use('/api/v1', healthRoutes);
 
 // Catch-all 404 handler

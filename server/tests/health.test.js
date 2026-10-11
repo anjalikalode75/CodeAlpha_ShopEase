@@ -24,6 +24,15 @@ describe('ShopEase Backend Foundation & Health Tests', () => {
     expect(res.body.name).toBe('ShopEase E-Commerce API');
   });
 
+  test('GET /api/health should return healthy status and database connection', async () => {
+    const res = await request(app).get('/api/health');
+    expect(res.status).toBe(200);
+    expect(res.body.success).toBe(true);
+    expect(res.body.database.status).toBe('connected');
+    expect(res.body).toHaveProperty('uptimeSeconds');
+    expect(res.body).toHaveProperty('timestamp');
+  });
+
   test('GET /api/v1/health should return healthy status and database connection', async () => {
     const res = await request(app).get('/api/v1/health');
     expect(res.status).toBe(200);
