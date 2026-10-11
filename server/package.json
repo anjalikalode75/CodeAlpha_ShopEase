@@ -1,0 +1,49 @@
+{
+  "name": "shopease-server",
+  "version": "1.0.0",
+  "description": "Production-style RESTful API backend for ShopEase e-commerce platform",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "seed": "node scripts/seed.js",
+    "test": "jest --runInBand --detectOpenHandles"
+  },
+  "keywords": [
+    "ecommerce",
+    "express",
+    "mongoose",
+    "mongodb",
+    "jwt",
+    "rest-api"
+  ],
+  "author": "CodeAlpha Full Stack Intern",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "express-validator": "^7.2.0",
+    "helmet": "^8.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.8.4",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.9",
+    "supertest": "^7.0.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testMatch": [
+      "**/tests/**/*.test.js"
+    ],
+    "verbose": true,
+    "forceExit": true,
+    "clearMocks": true
+  }
+}
